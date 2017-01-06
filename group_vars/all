@@ -1,0 +1,2 @@
+---
+php_fpm_listen: 9000

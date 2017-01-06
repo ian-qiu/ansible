@@ -1,0 +1,17 @@
+---
+- name: Nginx vm
+  hosts: nginx1
+  sudo: yes
+  roles:
+    - common
+    - nginx
+
+- name: PHP vm
+  hosts:
+    - php1
+    - php2
+    - php3
+  sudo: yes
+  roles:
+    - common
+    - php
