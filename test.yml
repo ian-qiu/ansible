@@ -1,0 +1,5 @@
+---
+- name: exec test
+  hosts: localhost
+  roles:
+    - test

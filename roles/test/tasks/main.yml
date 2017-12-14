@@ -1,0 +1,22 @@
+---
+# - name: check if exit
+#   fail:
+#   register: path="{{ lookup('env','PATH') }}"
+
+# - name: debug
+#   debug: 
+#     var: path
+
+- name: run python script
+  shell: branch="{{ branch_name }}";echo ${branch:7:4};
+  register: branch_port
+
+- name: check if fail
+  fail: 
+    msg: "abd"
+  when: branch_port.stdout | match("^889[0-9]$") == false
+
+- name: debug
+  debug: 
+    msg: "{{ branch_name }} {{ branch_port.stdout }}"
+      
